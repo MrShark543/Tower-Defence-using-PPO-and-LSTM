@@ -80,31 +80,31 @@ R_total = R_action + R_game + R_wave + R_tower + R_time
 
 ### Perfect Scores on Multiple Maps
 
-![Success Rate by Map](assets/success_rate_by_map.png)
+![Success Rate by Map](assets/Success_Rate_By_Map.png)
 
 The agent achieved perfect success rates (1.0) on 4 out of 10 maps, with mid-curriculum maps consistently above 0.85. Three complete curriculum cycles through all 10 maps in just 100 episodes — repeatedly advancing from simple to complex configurations and back.
 
 ### The Agent Discovered Optimal Positioning On Its Own
 
-![Action Distribution](assets/action_distribution.png)
+![Action Distribution](assets/Action_Distribution.png)
 
 69% of all actions were medium-distance tower placements. This wasn't programmed — the agent independently discovered that medium positions offer the best coverage-to-cost ratio. It also learned to upgrade more against boss enemies (0.18 upgrade rate) than normal enemies (0.16), adapting its resource allocation to enemy characteristics.
 
 ### CNN and LSTM Dynamically Share the Load
 
-![Neural Network Component Contributions](assets/nn_component_contributions.png)
+![Neural Network Component Contributions](assets/Neural_Network_component_contributions.png)
 
 The CNN and LSTM alternate as dominant contributors depending on the tactical situation. Spatial reasoning (CNN) dominates when positioning matters. Temporal reasoning (LSTM) takes over when responding to wave patterns and managing build sequences. This dynamic switching emerged naturally from training.
 
 ### Curriculum Learning Enables Knowledge Transfer
 
-![Curriculum Progression](assets/curriculum_progression.png)
+![Curriculum Progression](assets/Curriculum_Progression.png)
 
 The staircase pattern shows the agent advancing through all 10 maps, cycling back to reinforce fundamentals, then progressing again. Each cycle through the curriculum was faster than the previous one — evidence that strategic knowledge accumulated rather than being forgotten.
 
 ### Clean Exploration-to-Exploitation Transition
 
-![Exploration vs Exploitation](assets/exploration_vs_exploitation.png)
+![Exploration vs Exploitation](assets/Exploration_vs_Exploitation.png)
 
 Entropy dropped from 3.5-4.0 to ~0.5 by episode 40, with sustained low-level fluctuations afterward. The agent settled into effective strategies while maintaining enough exploration to adapt when encountering new maps.
 
